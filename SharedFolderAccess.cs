@@ -23,8 +23,7 @@ namespace LuisBot.Dialogs
         [Required(ErrorMessage = "please enter permission")]           // user ask
         [LuisActionBindingParam(CustomType = "permission", Order = 3)]
         public string permission { get; set; }
-
-        string GroupName;
+        public string GroupName;
 
 
 
@@ -91,10 +90,7 @@ namespace LuisBot.Dialogs
             string AeRequestStatus = (string)rss["workflowResponse"];  //Get Status Response(response from ae)
             rss = JObject.Parse(AeRequestStatus);                      //Get Status Response(response from ae)
             string message = (string)rss["message"];                   //Get Status Response(response from ae)
-
-
-
-
+            
             return Task.FromResult((object)message); //Get Status Response.(response from ae)
         }
 
